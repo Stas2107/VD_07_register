@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Редактирование профиля</title>
+</head>
+<body>
+    <h1>Редактирование профиля</h1>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}
+            {{ form.username(size=32) }}
+            {% if form.username.errors %}
+                {% for error in form.username.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            {% endif %}
+        </p>
+        <p>
+            {{ form.email.label }}
+            {{ form.email(size=32) }}
+            {% if form.email.errors %}
+                {% for error in form.email.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            {% endif %}
+        </p>
+        <p>
+            {{ form.current_password.label }}
+            {{ form.current_password(size=32) }}
+            {% if form.current_password.errors %}
+                {% for error in form.current_password.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            {% endif %}
+        </p>
+        <p>
+            {{ form.new_password.label }}
+            {{ form.new_password(size=32) }}
+            {% if form.new_password.errors %}
+                {% for error in form.new_password.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            {% endif %}
+        </p>
+        <p>
+            {{ form.confirm_password.label }}
+            {{ form.confirm_password(size=32) }}
+            {% if form.confirm_password.errors %}
+                {% for error in form.confirm_password.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            {% endif %}
+        </p>
+        <p>{{ form.submit }}</p>
+    </form>
+</body>
+</html>
